@@ -6,7 +6,7 @@ var Page = (function() {
 		itemsCount = $items.length,
 		current = 0,
 		bb = $( '#bb-bookblock' ).bookblock( {
-			speed : 800,
+			speed : 2000,
 			perspective : 2000,
 			shadowSides	: 0.8,
 			shadowFlip	: 0.4,
