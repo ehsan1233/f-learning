@@ -42,6 +42,17 @@ a:hover {
 	height: 100%;
 }
 
+.ff-flashcard {
+margin: 0 auto;
+width: 700px;
+height: 500px;
+background: black;
+}
+
+.ff-content {
+	color: white;
+}
+
 .container {
 	position: relative;
 	left: 0px;
