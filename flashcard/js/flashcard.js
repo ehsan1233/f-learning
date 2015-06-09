@@ -22,7 +22,20 @@ var Flashcard = (function() {
 				setJSP( 'destroy', old );
 
 			}
-		} );
+		} ),
+		$navNext = $( '#ff-nav-next' ),
+		$navPrev = $( '#ff-nav-prev' ).hide(),
+		$tblcontents = $( '#tblcontents' ),
+		transEndEventNames = {
+			'WebkitTransition': 'webkitTransitionEnd',
+			'MozTransition': 'transitionend',
+			'OTransition': 'oTransitionEnd',
+			'msTransition': 'MSTransitionEnd',
+			'transition': 'transitionend'
+		},
+		transEndEventName = transEndEventNames[Modernizr.prefixed('transition')],
+		supportTransitions = Modernizr.csstransitions;
+
 		
 	function init() {
 
@@ -66,20 +79,6 @@ var Flashcard = (function() {
 		// show table of contents
 		$tblcontents.on( 'click', toggleTOC );
 
-		// click a menu item
-		$menuItems.on( 'click', function() {
-
-			var $el = $( this ),
-				idx = $el.index(),
-				jump = function() {
-					ff.jump( idx + 1 );
-				};
-			
-			current !== idx ? closeTOC( jump ) : closeTOC();
-
-			return false;
-			
-		} );
 
 		// reinit jScrollPane on window resize
 		$( window ).on( 'debouncedresize', function() {
@@ -105,10 +104,6 @@ var Flashcard = (function() {
 			apiJSP.destroy();
 		}
 
-	}
-
-	function updateTOC() {
-		$menuItems.removeClass( 'menu-toc-current' ).eq( current ).addClass( 'menu-toc-current' );
 	}
 
 	function updateNavigation( isLastPage ) {

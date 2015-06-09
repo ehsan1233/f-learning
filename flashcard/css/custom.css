@@ -46,7 +46,7 @@ a:hover {
 margin: 0 auto;
 width: 700px;
 height: 500px;
-background: black;
+background: rgba(0,0,0,0.5);
 }
 
 .ff-content {
@@ -168,6 +168,53 @@ background: black;
 .bb-custom-wrapper nav span:last-child {
 	left: 40px;
 }
+
+
+
+
+
+.scroller nav {
+	top: 20px;
+	left: 60px;
+	position: relative;
+	z-index: 1001;
+}
+
+.scroller nav span {
+	position: relative;
+	width: 32px;
+	height: 32px;
+	top: 0;
+	left: 0;
+	background: #236aa2;
+	border-radius: 50%;
+	color: #fff;
+	line-height: 30px;
+	text-align: center;
+	speak: none;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.scroller nav span:hover {
+	background: #000;
+}
+
+.scroller nav span:last-child {
+	left: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .menu-button {
 	z-index: 1000;
