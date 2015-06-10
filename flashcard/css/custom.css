@@ -42,11 +42,13 @@ a:hover {
 	height: 100%;
 }
 
-.ff-flashcard {
+
+.fbb-custom-wrapper {
 margin: 0 auto;
 width: 700px;
 height: 500px;
 background: rgba(0,0,0,0.5);
+position: relative;
 }
 
 .ff-content {
@@ -173,7 +175,7 @@ background: rgba(0,0,0,0.5);
 
 
 
-.scroller nav {
+/* .scroller nav {
 	top: 20px;
 	left: 60px;
 	position: relative;
@@ -206,7 +208,7 @@ background: rgba(0,0,0,0.5);
 
 
 
-
+ */
 
 
 
@@ -245,7 +247,7 @@ background: rgba(0,0,0,0.5);
 	top: 60px;
 	left: 0;
 	width: 100%;
-	bottom: 50px;
+	bottom: 10px;
 	overflow: hidden;
 	-webkit-font-smoothing: subpixel-antialiased;
 }

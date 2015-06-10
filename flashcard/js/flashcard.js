@@ -1,10 +1,11 @@
-var Flashcard = (function() {
+var Page = (function() {
 
-	var $flashCard = $( '#ff-flashcard' ),
-		$fItems = $flashCard.children(),
-		itemsCount = $fItems.length,
+	var $fcontainer = $( '#fcontainer' ),
+		$fbookBlock = $( '#fbb-bookblock' ),
+		$fitems = $fbookBlock.children(),
+		fitemsCount = $fitems.length,
 		current = 0,
-		ff = $( '#ff-flashcard' ).bookblock( {
+		fbb = $( '#fbb-bookblock' ).bookblock( {
 			speed : 2000,
 			perspective : 2000,
 			shadowSides	: 0.8,
@@ -12,8 +13,6 @@ var Flashcard = (function() {
 			onEndFlip : function(old, page, isLimit) {
 				
 				current = page;
-				// update TOC current
-				updateTOC();
 				// updateNavigation
 				updateNavigation( isLimit );
 				// initialize jScrollPane on the content div for the new item
@@ -23,9 +22,9 @@ var Flashcard = (function() {
 
 			}
 		} ),
-		$navNext = $( '#ff-nav-next' ),
-		$navPrev = $( '#ff-nav-prev' ).hide(),
-		$tblcontents = $( '#tblcontents' ),
+		$navNext = $( '#fbb-nav-next' ),
+		$navPrev = $( '#fbb-nav-prev' ).hide(),
+		$ftblcontents = $( '#ftblcontents' ),
 		transEndEventNames = {
 			'WebkitTransition': 'webkitTransitionEnd',
 			'MozTransition': 'transitionend',
@@ -36,7 +35,6 @@ var Flashcard = (function() {
 		transEndEventName = transEndEventNames[Modernizr.prefixed('transition')],
 		supportTransitions = Modernizr.csstransitions;
 
-		
 	function init() {
 
 		// initialize jScrollPane on the content div of the first item
@@ -49,35 +47,35 @@ var Flashcard = (function() {
 
 		// add navigation events
 		$navNext.on( 'click', function() {
-			ff.next();
+			fbb.next();
 			return false;
 		} );
 
 		$navPrev.on( 'click', function() {
-			ff.prev();
+			fbb.prev();
 			return false;
 		} );
 		
 		// add swipe events
-		$fItems.on( {
+		$fitems.on( {
 			'swipeleft'		: function( event ) {
-				if( $container.data( 'opened' ) ) {
+				if( $fcontainer.data( 'opened' ) ) {
 					return false;
 				}
-				ff.next();
+				fbb.next();
 				return false;
 			},
 			'swiperight'	: function( event ) {
-				if( $container.data( 'opened' ) ) {
+				if( $fcontainer.data( 'opened' ) ) {
 					return false;
 				}
-				ff.prev();
+				fbb.prev();
 				return false;
 			}
 		} );
 
 		// show table of contents
-		$tblcontents.on( 'click', toggleTOC );
+		$ftblcontents.on( 'click', toggleTOC );
 
 
 		// reinit jScrollPane on window resize
@@ -91,7 +89,7 @@ var Flashcard = (function() {
 	function setJSP( action, idx ) {
 		
 		var idx = idx === undefined ? current : idx,
-			$content = $fItems.eq( idx ).children( 'div.content' ),
+			$content = $fitems.eq( idx ).children( 'div.fcontent' ),
 			apiJSP = $content.data( 'jsp' );
 		
 		if( action === 'init' && apiJSP === undefined ) {
@@ -124,23 +122,23 @@ var Flashcard = (function() {
 	}
 
 	function toggleTOC() {
-		var opened = $container.data( 'opened' );
+		var opened = $fcontainer.data( 'opened' );
 		opened ? closeTOC() : openTOC();
 	}
 
 	function openTOC() {
 		$navNext.hide();
 		$navPrev.hide();
-		$container.addClass( 'slideRight' ).data( 'opened', true );
+		$fcontainer.addClass( 'slideRight' ).data( 'opened', true );
 	}
 
 	function closeTOC( callback ) {
 
-		updateNavigation( current === itemsCount - 1 );
-		$container.removeClass( 'slideRight' ).data( 'opened', false );
+		updateNavigation( current === fitemsCount - 1 );
+		$fcontainer.removeClass( 'slideRight' ).data( 'opened', false );
 		if( callback ) {
 			if( supportTransitions ) {
-				$container.on( transEndEventName, function() {
+				$fcontainer.on( transEndEventName, function() {
 					$( this ).off( transEndEventName );
 					callback.call();
 				} );
