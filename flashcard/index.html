@@ -12,7 +12,6 @@
 		<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.custom.css" />
 		<link rel="stylesheet" type="text/css" href="css/bookblock.css" />
 		<link rel="stylesheet" type="text/css" href="css/custom.css" />
-		<script src="js/modernizr.custom.79639.js"></script>
 	</head>
 	<body>
 		<div id="container" class="container">	
@@ -38,60 +37,74 @@
 								<h2>E-learning / Prof. Ulrik Schroeder</h2>
 								<p>"Prime consists of tion, documentation, supplement guidelines and working documents and provide other employees in the integrated social network. "</p>
 								<div id="fcontainer" class="fcontainer">
+									<div class="fmenu-panel">
+										<h3>Table of Flashcards</h3>
+										<ul id="fmenu-toc" class="fmenu-toc">
+											<li class="fmenu-toc-current"><a href="#fitem1">flashcard1</a></li>
+											<li><a href="#fitem2">flashcard2</a></li>
+											<li><a href="#fitem3">flashcard3</a></li>
+											<li><a href="#fitem4">flashcard4</a></li>
+											<li><a href="#fitem5">flashcard5</a></li>
+										</ul>
+										<div>
+											<a href="">Add flashcard</a>
+										</div>
+									</div>
+	
 									<div class="fbb-custom-wrapper">
-									<div id="fbb-fookblock" class="fbb-bookblock">
-										<div class="fbb-item" id="fitem1">
-											<div class="fcontent">
-												<div class="fscroller">
-													
-													<p>"Prime consists of a supported digital media learning and should also be possible, present information, documentation, supplement guidelines and working documents and provide other employees in the integrated social network. "</p>
-													
-													<p><em>By <a href="" target="_blank"> Alex Goodmann</em></a></p>
+										<div id="fbb-bookblock" class="fbb-bookblock">
+											<div class="fbb-item" id="fitem1">
+												<div class="fcontent">
+													<div class="fscroller">
+														
+														<p>"Prime consists of a supported digital media learning and should also be possible, present information ocial network. "</p>
+													</div>
+												</div>
+											</div>
+											<div class="fbb-item" id="fitem2">
+												<div class="fcontent">
+													<div class="fscroller">
+												
+														<p>"Prime consists of a supported digital media learning and knowledge management system with corresponding 	applications for mobil possible, reusable units, regardless of the format of the document. This allows 	relevant information optimally filtered and additionally at of the document. This allows 	relevant information optimally filtered and additionallyat of the document. This allows 	relevant information optimally filtered and additionallyat of the document. This allows 	relevant information optimally filtered and additionallyat of the document. This allows 	relevant information optimally filtered and additionallyat of the document. This allows 	relevant information optimally filtered and additionallyat of the document. This allows 	relevant information optimally filtered and additionallyat of the document. This allows 	relevant information optimally filtered and additionallyin be provided a new context. "</p>
+													</div>
+												</div>
+											</div>
+											<div class="fbb-item" id="fitem3">
+												<div class="fcontent">
+													<div class="fscroller">
+														
+														<p>"Prime consists of a supported digital media learning and should also be possible, present information ocial network. "</p>
+													</div>
+												</div>
+											</div>
+											<div class="fbb-item" id="fitem4">
+												<div class="fcontent">
+													<div class="fscroller">
+														
+														<p>"Prime consists of a supported digital media learning and should also be possible, present information ocial network. "</p>
+														<img src="img/1.jpg" alt="">
+													</div>
 												</div>
 											</div>
 										</div>
-										<div class="fbb-item" id="fitem2">
-											<div class="fcontent">
-												<div class="fscroller">
-													
-													<p>"Prime consists of a supported digital media learning and knowledge management system with corresponding applications for mobil possible, reusable units, regardless of the format of the document. This allows relevant information optimally filtered and additionally in be provided a new context. "</p>
-																
-													<p></p>
-															
-													<p>"Flash Card Position"</p>
-																
-													<p><em>By <a href="" target="_blank"> Alex Goodmann</em></a></p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<nav>
-										<span id="fb-nav-prev">&larr;</span>
-										<span id="fb-nav-next">&rarr;</span>
-									</nav>							
-									<span id="ftblcontents" class="fmenu-button">Table of Contents</span>						
-									</div>
+										<nav>
+											<span id="fbb-nav-prev">&larr;</span>
+											<span id="fbb-nav-next">&rarr;</span>
+										</nav>							
+										<span id="ftblcontents" class="fmenu-button">Table of Contents</span>						
 									</div>
 								</div>
+							
 								<p><em>By <a href="" target="_blank"> Alex Goodmann</em></a></p>
 							</div>
-						
+						</div>
 					</div>
 					<div class="bb-item" id="item2">
 						<div class="content">
 							<div class="scroller">
 								<h2>E-learning / Prof. Ulrik Schroeder</h2>
 								<p>"Prime consists of a supported digital media learning and knowledge management system with corresponding applications for mobile devices. This should not only improve self-directed learning in the workplace and provide immediate assistance in the work process, but it should also be possible, present information, documentation, supplement guidelines and working documents and provide other employees in the integrated social network. The applications also enable the intelligent partitioning and storing complex documents in the smallest possible, reusable units, regardless of the format of the document. This allows relevant information optimally filtered and additionally in be provided a new context. "</p>
-
-																<p></p>
-								
-
-
 								<p>"Flash Card Position"</p>
-
-								
-								
-
 								<p><em>By <a href="" target="_blank"> Alex Goodmann</em></a></p>
 							</div>
 						</div>
@@ -162,16 +175,25 @@
 				
 		</div><!-- /container -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/modernizr.custom.79639.js"></script>
 		<script src="js/jquery.mousewheel.js"></script>
 		<script src="js/jquery.jscrollpane.min.js"></script>
 		<script src="js/jquerypp.custom.js"></script>
 		<script src="js/jquery.bookblock.js"></script>
+		<script src="js/jquery.flashcard.js"></script>
 		<script src="js/page.js"></script>
 		<script src="js/flashcard.js"></script>
 		<script>
 			$(function() {
 
 				Page.init();
+
+			});
+		</script>
+		<script>
+			$(function() {
+
+				fPage.init();
 
 			});
 		</script>

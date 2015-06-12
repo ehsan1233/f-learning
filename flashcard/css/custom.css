@@ -47,15 +47,14 @@ a:hover {
 margin: 0 auto;
 width: 700px;
 height: 500px;
+z-index: 2;
 background: rgba(0,0,0,0.5);
 position: relative;
+margin-bottom: 50px;
+margin-top: 50px;
 }
 
-.ff-content {
-	color: white;
-}
-
-.container {
+.container, .fcontainer {
 	position: relative;
 	left: 0px;
 	-webkit-transition: left 0.3s ease-in-out;
@@ -66,6 +65,11 @@ position: relative;
 .slideRight {
 	left: 240px;
 }
+
+.fslideRight {
+	left: 270px !important;
+}
+
 
 .no-js .container {
 	padding-left: 240px;
@@ -82,9 +86,26 @@ position: relative;
 	text-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
 
+.fmenu-panel {
+	background: #236aa2;
+	width: 240px;
+	height: 100%;
+	position: relative;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+	box-shadow: 1px 3px 12px 5px #888888;
+}
+
 .js .menu-panel {
 	position: absolute;
 	left: -240px;
+}
+
+.js .fmenu-panel {
+	position: absolute;
+	left: 515px;
 }
 
 .menu-panel h3 {
@@ -95,11 +116,30 @@ position: relative;
 	box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05);
 } 
 
-.menu-toc {
+.fmenu-panel h3 {
+	font-size: 1.8em;
+	padding: 20px;
+	font-weight: 300;
+	color: #fff;
+	box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05);
+} 
+
+.menu-toc, .fmenu-toc {
 	list-style: none;
 }
 
 .menu-toc li a {
+	display: block;
+	color: #fff;
+	font-size: 1.1em;
+	line-height: 3.5;
+	padding: 0 20px;
+	cursor: pointer;
+	background: #236aa2;
+	border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+.fmenu-toc li a {
 	display: block;
 	color: #fff;
 	font-size: 1.1em;
@@ -115,11 +155,33 @@ position: relative;
 	background: #2c85c9;
 }
 
+.fmenu-toc li a:hover,
+.fmenu-toc li.fmenu-toc-current a{
+	background: #2c85c9;
+}
+
 .menu-panel div {
 	margin-top: 20px;
 }
 
+.fmenu-panel div {
+	margin-top: 20px;
+}
+
 .menu-panel div a {
+	text-transform: uppercase;
+	font-size: 0.7em;
+	line-height: 1;
+	padding: 5px 20px;
+	display: block;
+	border: none;
+	color: #bc0b0b;
+	letter-spacing: 1px;
+	font-weight: 800;
+	text-shadow: 0 1px rgba(255,255,255,0.2);
+} 
+
+.fmenu-panel div a {
 	text-transform: uppercase;
 	font-size: 0.7em;
 	line-height: 1;
@@ -138,7 +200,20 @@ position: relative;
 	text-shadow: none;
 }
 
+.fmenu-panel div a:hover {
+	background: inherit;
+	color: #fff;
+	text-shadow: none;
+}
+
 .bb-custom-wrapper nav {
+	top: 20px;
+	left: 60px;
+	position: absolute;
+	z-index: 1000;
+}
+
+.fbb-custom-wrapper nav {
 	top: 20px;
 	left: 60px;
 	position: absolute;
@@ -162,14 +237,41 @@ position: relative;
 	cursor: pointer;
 }
 
+.fbb-custom-wrapper nav span,
+.fmenu-button {
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	top: 0;
+	left: 0;
+	background: #236aa2;
+	border-radius: 50%;
+	color: #fff;
+	line-height: 30px;
+	text-align: center;
+	speak: none;
+	font-weight: bold;
+	cursor: pointer;
+}
+
 .bb-custom-wrapper nav span:hover,
 .menu-button:hover {
+	background: #000;
+}
+
+.fbb-custom-wrapper nav span:hover,
+.fmenu-button:hover {
 	background: #000;
 }
 
 .bb-custom-wrapper nav span:last-child {
 	left: 40px;
 }
+
+.fbb-custom-wrapper nav span:last-child {
+	left: 40px;
+}
+
 
 
 
@@ -218,14 +320,14 @@ position: relative;
 
 
 
-.menu-button {
+.menu-button, .fmenu-button {
 	z-index: 1000;
 	left: 20px;
 	top: 20px;
 	text-indent: -9000px;
 }
 
-.menu-button:after {
+.menu-button:after, .fmenu-button:after {
 	position: absolute;
 	content: '';
 	width: 50%;
@@ -252,12 +354,38 @@ position: relative;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
 
-.scroller {
+.js .fcontent {
+	position: absolute;
+	top: 60px;
+	left: 0;
+	width: 100%;
+	bottom: 10px;
+	overflow: hidden;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+.scroller, .fscroller  {
 	padding: 10px 5% 10px 5%;
 }
 
 .js .content:before,
 .js .content:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 20px;
+	z-index: 100;
+	pointer-events: none;
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.js .fcontent:before,
+.js .fcontent:after {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -281,7 +409,27 @@ position: relative;
 	background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
 }
 
+.js .fcontent:after {
+	top: auto;
+	bottom: 0;
+	background: -webkit-linear-gradient(bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+	background: -moz-linear-gradient(bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+	background: -o-linear-gradient(bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+	background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
 .content h2 {
+	font-weight: 300;
+	font-size: 4em;
+	padding: 0 0 10px;
+	color: #333;
+	margin: 0 1% 40px;
+	text-align: left;
+	box-shadow: 0 10px 0 rgba(0,0,0,0.02);
+	text-shadow: 0 0 2px #fff;
+}
+
+.fcontent h2 {
 	font-weight: 300;
 	font-size: 4em;
 	padding: 0 0 10px;
@@ -297,6 +445,14 @@ position: relative;
 }
 
 .content p {
+	font-size: 1.2em;
+	line-height: 1.6;
+	font-weight: 300;
+	padding: 5px 8%;
+	text-align: justify;
+}
+
+.fcontent p {
 	font-size: 1.2em;
 	line-height: 1.6;
 	font-weight: 300;

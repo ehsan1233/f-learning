@@ -1,18 +1,21 @@
-var Page = (function() {
+var fPage = (function() {
 
 	var $fcontainer = $( '#fcontainer' ),
+		$fmenu = $(".fmenu-panel"),
 		$fbookBlock = $( '#fbb-bookblock' ),
 		$fitems = $fbookBlock.children(),
 		fitemsCount = $fitems.length,
 		current = 0,
-		fbb = $( '#fbb-bookblock' ).bookblock( {
-			speed : 2000,
+		fbb = $( '#fbb-bookblock' ).fbookblock( {
+			speed : 1000,
 			perspective : 2000,
-			shadowSides	: 0.8,
-			shadowFlip	: 0.4,
+			shadowSides	: 0.9,
+			shadowFlip	: 0.3,
 			onEndFlip : function(old, page, isLimit) {
 				
 				current = page;
+				// update TOC current
+				updateTOC();
 				// updateNavigation
 				updateNavigation( isLimit );
 				// initialize jScrollPane on the content div for the new item
@@ -22,8 +25,9 @@ var Page = (function() {
 
 			}
 		} ),
-		$navNext = $( '#fbb-nav-next' ),
-		$navPrev = $( '#fbb-nav-prev' ).hide(),
+		$fnavNext = $( '#fbb-nav-next' ),
+		$fnavPrev = $( '#fbb-nav-prev' ).hide(),
+		$fmenuItems = $fcontainer.find( 'ul.fmenu-toc > li' ),
 		$ftblcontents = $( '#ftblcontents' ),
 		transEndEventNames = {
 			'WebkitTransition': 'webkitTransitionEnd',
@@ -46,12 +50,12 @@ var Page = (function() {
 	function initEvents() {
 
 		// add navigation events
-		$navNext.on( 'click', function() {
+		$fnavNext.on( 'click', function() {
 			fbb.next();
 			return false;
 		} );
 
-		$navPrev.on( 'click', function() {
+		$fnavPrev.on( 'click', function() {
 			fbb.prev();
 			return false;
 		} );
@@ -77,6 +81,21 @@ var Page = (function() {
 		// show table of contents
 		$ftblcontents.on( 'click', toggleTOC );
 
+		// click a menu item
+		$fmenuItems.on( 'click', function() {
+
+			var $el = $( this ),
+				idx = $el.index(),
+				jump = function() {
+					fbb.jump( idx + 1 );
+				};
+			
+			current !== idx ? closeTOC( jump ) : closeTOC();
+
+			return false;
+			
+		} );
+
 
 		// reinit jScrollPane on window resize
 		$( window ).on( 'debouncedresize', function() {
@@ -89,11 +108,11 @@ var Page = (function() {
 	function setJSP( action, idx ) {
 		
 		var idx = idx === undefined ? current : idx,
-			$content = $fitems.eq( idx ).children( 'div.fcontent' ),
-			apiJSP = $content.data( 'jsp' );
+			$fcontent = $fitems.eq( idx ).children( 'div.fcontent' ),
+			apiJSP = $fcontent.data( 'jsp' );
 		
 		if( action === 'init' && apiJSP === undefined ) {
-			$content.jScrollPane({verticalGutter : 0, hideFocus : true });
+			$fcontent.jScrollPane({verticalGutter : 0, hideFocus : true });
 		}
 		else if( action === 'reinit' && apiJSP !== undefined ) {
 			apiJSP.reinitialise();
@@ -104,41 +123,45 @@ var Page = (function() {
 
 	}
 
+	function updateTOC() {
+		$fmenuItems.removeClass( 'fmenu-toc-current' ).eq( current ).addClass( 'fmenu-toc-current' );
+	}
+
 	function updateNavigation( isLastPage ) {
 		
 		if( current === 0 ) {
-			$navNext.show();
-			$navPrev.hide();
+			$fnavNext.show();
+			$fnavPrev.hide();
 		}
 		else if( isLastPage ) {
-			$navNext.hide();
-			$navPrev.show();
+			$fnavNext.hide();
+			$fnavPrev.show();
 		}
 		else {
-			$navNext.show();
-			$navPrev.show();
+			$fnavNext.show();
+			$fnavPrev.show();
 		}
 
 	}
 
 	function toggleTOC() {
-		var opened = $fcontainer.data( 'opened' );
+		var opened = $fmenu.data( 'opened' );
 		opened ? closeTOC() : openTOC();
 	}
 
 	function openTOC() {
-		$navNext.hide();
-		$navPrev.hide();
-		$fcontainer.addClass( 'slideRight' ).data( 'opened', true );
+		$fnavNext.hide();
+		$fnavPrev.hide();
+		$fmenu.addClass( 'fslideRight' ).data( 'opened', true );
 	}
 
 	function closeTOC( callback ) {
 
 		updateNavigation( current === fitemsCount - 1 );
-		$fcontainer.removeClass( 'slideRight' ).data( 'opened', false );
+		$fmenu.removeClass( 'fslideRight' ).data( 'opened', false );
 		if( callback ) {
 			if( supportTransitions ) {
-				$fcontainer.on( transEndEventName, function() {
+				$fmenu.on( transEndEventName, function() {
 					$( this ).off( transEndEventName );
 					callback.call();
 				} );
