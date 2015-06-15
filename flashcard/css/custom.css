@@ -111,19 +111,70 @@ margin-top: 50px;
 	left: 515px;
 }
 
+.menu-panel div a span {
+	font-size: 22px;
+	background: #fff;
+	position: absolute;
+	padding: 1px 0 0 1px;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	color: #236aa2;
+	line-height: 30px;
+	text-align: center;
+	speak: none;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.menu-panel div a span:hover {
+	background: #ECAFAF;
+	color: #FFF;
+	-webkit-transition: background 0.3s ease-in-out;
+	-o-transition: background 0.3s ease-in-out;
+	transition: background 0.3s ease-in-out;
+
+
+}
+
+.fmenu-panel div a span {
+	font-size: 22px;
+	background: #fff;
+	position: absolute;
+	padding: 1px 0 0 1px;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	color: #236aa2;
+	line-height: 30px;
+	text-align: center;
+	speak: none;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.fmenu-panel div a span:hover {
+	background: #ECAFAF;
+	color: #FFF;
+	-webkit-transition: background 0.3s ease-in-out;
+	-o-transition: background 0.3s ease-in-out;
+	transition: background 0.3s ease-in-out;
+}
+
+
 .menu-panel h3 {
 	font-size: 1.8em;
 	padding: 20px;
-	font-weight: 300;
-	color: #fff;
+	font-weight: 400;
+	color: #ECAFAF;
 	box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05);
 } 
 
 .fmenu-panel h3 {
 	font-size: 1.8em;
 	padding: 20px;
-	font-weight: 300;
-	color: #fff;
+	font-weight: 400;
+	color: #ECAFAF;
 	box-shadow: inset 0 -1px 0 rgba(0,0,0,0.05);
 } 
 
@@ -175,7 +226,7 @@ margin-top: 50px;
 	text-transform: uppercase;
 	font-size: 0.7em;
 	line-height: 1;
-	padding: 5px 20px;
+	padding: 0 20px 5px 20px;
 	display: block;
 	border: none;
 	color: #bc0b0b;
@@ -423,7 +474,7 @@ margin-top: 50px;
 
 .content h2 {
 	font-weight: 300;
-	font-size: 4em;
+	font-size: 3.5em;
 	padding: 0 0 10px;
 	color: #333;
 	margin: 0 1% 40px;

@@ -52,11 +52,11 @@
 .jspDrag {
 	background: #fff;
 	position: relative;
-	box-shadow: inset -1px 0 8px rgba(0,0,0,0.05);
+	box-shadow: inset -1px 0 8px rgba(0,0,0,0.15);
 	top: 0;
 	left: 0;
 	border-radius: 5px;
-	border: 1px solid #f0f0f0;
+	border: 1px solid #236aa2;
 	cursor: pointer;
 }
 
