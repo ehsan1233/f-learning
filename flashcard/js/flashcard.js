@@ -1,7 +1,7 @@
 var fPage = (function() {
 
 	var $fcontainer = $( '#fcontainer' ),
-		$fmenu = $(".fmenu-panel"),
+		$fmenu = $(".fbb-custom-wrapper"),
 		$fbookBlock = $( '#fbb-bookblock' ),
 		$fitems = $fbookBlock.children(),
 		fitemsCount = $fitems.length,

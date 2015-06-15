@@ -44,17 +44,21 @@ a:hover {
 
 
 .fbb-custom-wrapper {
-margin: 0 auto;
-width: 700px;
-height: 500px;
-z-index: 2;
-background: rgba(0,0,0,0.5);
-position: relative;
-margin-bottom: 50px;
-margin-top: 50px;
+	margin: 0 auto;
+	width: 700px;
+	height: 500px;
+	z-index: 2;
+	background: rgba(0,0,0,0.5);
+	position: absolute;
+	margin-bottom: 50px;
+	margin-top: 50px;
+	left: 0;
+	-webkit-transition: left 0.3s ease-in-out;
+	-o-transition: left 0.3s ease-in-out;
+	transition: left 0.3s ease-in-out;
 }
 
-.container, .fcontainer {
+.container {
 	position: relative;
 	left: 0px;
 	-webkit-transition: left 0.3s ease-in-out;
@@ -62,12 +66,22 @@ margin-top: 50px;
 	transition: left 0.3s ease-in-out;
 }
 
+.fcontainer {
+	position: absolute;
+	left: 30%;
+	-webkit-transition: left 0.3s ease-in-out;
+	-o-transition: left 0.3s ease-in-out;
+	transition: left 0.3s ease-in-out;
+}
+
+
+
 .slideRight {
 	left: 240px;
 }
 
 .fslideRight {
-	left: 270px !important;
+	left: 245px !important;
 }
 
 
@@ -96,9 +110,6 @@ margin-top: 50px;
 	left: 0;
 	text-shadow: 0 1px 1px rgba(0,0,0,0.1);
 	box-shadow: 0px 0px 5px 3px #888;
-		-webkit-transition: left 0.3s ease-in-out;
-	-o-transition: left 0.3s ease-in-out;
-	transition: left 0.3s ease-in-out;
 }
 
 .js .menu-panel {
@@ -108,7 +119,10 @@ margin-top: 50px;
 
 .js .fmenu-panel {
 	position: absolute;
-	left: 515px;
+	left: 0;
+	height: 500px;
+	margin-bottom: 50px;
+	margin-top: 50px;
 }
 
 .menu-panel div a span {
