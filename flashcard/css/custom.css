@@ -125,6 +125,21 @@ a:hover {
 	margin-top: 50px;
 }
 
+.fbb-favorite {
+	float: right;
+	margin: 5px 5px 0 0;
+}
+
+.fbb-favorite:hover {
+	cursor: pointer;
+}
+
+.fbb-favorite:active {
+	cursor: pointer;
+}
+
+
+
 .menu-panel div a span {
 	font-size: 22px;
 	background: #fff;
