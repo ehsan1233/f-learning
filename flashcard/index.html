@@ -26,7 +26,7 @@
 					<li><a href="#item5">Multimedia Internet Technology</a></li>
 				</ul>
 				<div>
-					<a href="addcourse.html" title="Add course"><span id="add-course">&plus;</span></a>
+					<a href="#modal-course" title="Add course"><span id="add-course">&plus;</span></a>
 				</div>
 			</div>
 
@@ -48,13 +48,13 @@
 											<li><a href="#fitem5">flashcard5</a></li>
 										</ul>
 										<div>
-											<a href="" title="Add Flashcard"><span>&plus;</span></a>
+											<a href="#modal-flashcard" title="Add Flashcard"><span>&plus;</span></a>
 										</div>
 									</div>
 									<div class="fbb-custom-wrapper">
 										<div id="fbb-bookblock" class="fbb-bookblock">
 											<div class="fbb-item" id="fitem1">
-												<!-- <span class="fbb-favorite"><img width="20px" height="20px" src="img/star.png"></span> -->
+												<span class="fbb-favorite"><img width="20px" height="20px" src="img/star.png"></span>
 												<div class="fcontent">
 													<div class="fscroller">
 														
@@ -176,10 +176,91 @@
 				
 		</div><!-- /container -->
 
+		
+		<div class="modal" id="modal-course" aria-hidden="true"> <!-- Add course page modal -->
+    	  <div class="modal-dialog">
+    	    <div class="modal-header">
+    	      <h2>Add new course</h2>
+    	      <a href="index.html" class="btn-close" aria-hidden="true">×</a>
+    	    </div>
+    	    <div class="modal-body">
+				<div class="form-position">
+					<form class="form-horizontal">
+					  <div class="form-group">
+					    <label for="inputCourseName" class="col-sm-2 control-label">Name:</label>
+					    <div class="col-sm-input">
+					      <input type="text" class="form-control" id="inputCourseName" placeholder="Course name">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label for="inputProf" class="col-sm-2 control-label">Lecturer(s):</label>
+					    <div class="col-sm-input">
+					      <input type="text" class="form-control" id="inputProf" placeholder="Name of the professor">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					  	<label for="form-description" class="col-sm-2 control-label">Description:</label>
+					    <div class="col-sm-input">
+					    	<textarea class="form-control" id="form-description" rows="4" placeholder="Short description about the course"></textarea>
+					    </div>
+					  </div>
+					</form>
+				</div>
+    	    </div>
+    	    <div class="modal-footer">
+    	    	<div class="form-group">
+				  <div class="col-sm-offset-2 col-sm-10">
+				    <button type="submit" class="btn "><a href="index.html">Add</a></button>
+				    <button type="submit" class="btn cancel"><a href="index.html">Cancel</a></button>
+				  </div>
+				</div>
+    	    </div>
+    	  </div>
+    	</div>
+    	</div>
+    	<!-- / Add course page modal -->
+
+		<div class="modal" id="modal-flashcard" aria-hidden="true"> <!-- Add flashcard page modal -->
+    	  <div class="modal-dialog">
+    	    <div class="modal-header">
+    	      <h2>Add new flashcard</h2>
+    	      <a href="index.html" class="btn-close" aria-hidden="true">×</a>
+    	    </div>
+    	    <div class="modal-body">
+				<div class="form-position">
+					<form class="form-horizontal">
+					  <div class="form-group">
+					    <label for="inputCourseName" class="col-sm-2 control-label">Title:</label>
+					    <div class="col-sm-input">
+					      <input type="text" class="form-control" id="inputCourseName" placeholder="title of flashcard">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					  	<label for="form-description" class="col-sm-2 control-label">Description:</label>
+					    <div class="col-sm-input">
+					    	<textarea class="form-control" id="form-description" rows="4" placeholder="important notes of the course"></textarea>
+					    </div>
+					  </div>
+					</form>
+				</div>
+    	    </div>
+    	    <div class="modal-footer">
+    	    	<div class="form-group">
+				  <div class="col-sm-offset-2 col-sm-10">
+				    <button type="submit" class="btn "><a href="index.html">Add</a></button>
+				    <button type="submit" class="btn cancel"><a href="index.html">Cancel</a></button>
+				  </div>
+				</div>
+    	    </div>
+    	  </div>
+    	</div>
+    	</div>
+    	<!-- / Add course page modal -->
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="js/modernizr.custom.79639.js"></script>
-/*<!-- 		<script src="js/jquery.mousewheel.js"></script>
-		<script src="js/jquery.jscrollpane.min.js"></script> -->*/
+<!-- 		<script src="js/jquery.mousewheel.js"></script>
+		<script src="js/jquery.jscrollpane.min.js"></script> -->
 		<script src="js/jquerypp.custom.js"></script>
 		<script src="js/jquery.bookblock.js"></script>
 		<script src="js/jquery.flashcard.js"></script>
