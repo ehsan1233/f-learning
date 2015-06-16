@@ -12,7 +12,10 @@
 		<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.custom.css" />
 		<link rel="stylesheet" type="text/css" href="css/bookblock.css" />
 		<link rel="stylesheet" type="text/css" href="css/custom.css" />
-
+        <!--Added by Mahdi Saber-->
+        <link rel="stylesheet" type="text/css" href="css/mahdi-style.css" />
+        <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.3.custom.min.css" />
+        <!--/Added by Mahdi Saber-->
 	</head>
 	<body>
 		<div id="container" class="container">	
@@ -186,6 +189,19 @@
     	    <div class="modal-body">
 				<div class="form-position">
 					<form class="form-horizontal">
+
+                <!--Added By Mahdi Saber-->
+                <div class="form-group">
+                    <label for="searchcourse"  class="col-sm-2 control-label">Desired course:</label>
+                    <div class="col-sm-input">
+                        <input id="searchcourse" type="text" class="form-control" placeholder="e.g. Elearning">
+                        <input type="submit" value="Search" id="searchcourse-submit" class="search-courseflash-btn">
+                        
+                    </div>
+                </div>
+                        <hr class="style-eight"/>
+                <!--///Added By Mahdi Saber-->
+
 					  <div class="form-group">
 					    <label for="inputCourseName" class="col-sm-2 control-label">Name:</label>
 					    <div class="col-sm-input">
@@ -229,6 +245,18 @@
     	    <div class="modal-body">
 				<div class="form-position">
 					<form class="form-horizontal">
+
+                        <!--Added By Mahdi Saber-->
+                        <div class="form-group">
+                            <label for="searchflashcard"  class="col-sm-2 control-label">Desired course:</label>
+                            <div class="col-sm-input">
+                                <input id="searchflashcard" type="text" class="form-control" placeholder="e.g. Elearning">
+                                <input type="submit" value="Search" id="searchflashcard-submit">
+                            </div>
+                        </div>
+                        <hr class="style-eight"/>
+                <!--///Added By Mahdi Saber-->
+
 					  <div class="form-group">
 					    <label for="inputCourseName" class="col-sm-2 control-label">Title:</label>
 					    <div class="col-sm-input">
@@ -256,8 +284,11 @@
     	</div>
     	</div>
     	<!-- / Add course page modal -->
+        
+        <script src="js/myjqui/jquery-1.9.1.js"></script>
+        <script src="js/myjqui/jquery-ui-1.10.3.custom.min.js"></script>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
 		<script src="js/modernizr.custom.79639.js"></script>
 <!-- 		<script src="js/jquery.mousewheel.js"></script>
 		<script src="js/jquery.jscrollpane.min.js"></script> -->
@@ -268,10 +299,23 @@
 		<script src="js/flashcard.js"></script>
 		<script type="text/javascript" src="js/tinymce/tinymce.min.js"></script>
 		<script src="js/addeditor.js"> </script>
-		<script>
-			$(function() {
+        <!--Added By Mahdi Saber-->
+        <!--<script src="js/myjqui/jquery-1.9.1.js"></script>
+        <script src="js/myjqui/jquery-ui-1.10.3.custom.min.js"></script>-->
+        
+        <script>
+            var tags = ["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby"];
+            $("#search-course").autocomplete({
+                source: tags
+            });
 
-				Page.init();
+        </script>
+        <!--/Added By Mahdi Saber-->
+
+		<script>
+		    $(function () {
+
+			    Page.init();
 
 			});
 		</script>
