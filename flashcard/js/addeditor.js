@@ -11,7 +11,7 @@ tinymce.init({
         if(type=='image') $('#my_form input').click();
     },
     toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-    toolbar2: "print preview media | forecolor backcolor emoticons",
+    toolbar2: "preview media | forecolor backcolor emoticons",
     relative_urls: false,
     image_advtab: true,
     templates: [

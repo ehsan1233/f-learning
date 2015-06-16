@@ -503,7 +503,7 @@ a:hover {
 
 .content h2 {
 	font-weight: 300;
-	font-size: 3.5em;
+	font-size: 3em;
 	padding: 0 0 10px;
 	color: #333;
 	margin: 0 1% 40px;
@@ -611,10 +611,10 @@ a:hover {
   border-radius: 5px;
   margin-left: -200px;
   position: fixed;
-  left: 50%;
+  left: 45%;
   top: -100%;
   z-index: 10001;
-  width: 600px;
+  width: 700px;
   -webkit-transform: translate(0, -500%);
   -ms-transform: translate(0, -500%);
   transform: translate(0, -500%);
@@ -656,6 +656,7 @@ a:hover {
 .form-horizontal .form-group {
   margin-right: -15px;
   margin-left: -15px;
+    width: 95%;
 }
 @media (min-width: 768px) {
   .form-horizontal .control-label {
@@ -701,11 +702,11 @@ a:hover {
 }
 
 .col-sm-input input {
-	  width: 90%;
-  height: 30px;
-  border-radius: 3px;
-  padding: 10px;
-  margin: 5px 0 10px 0;
+	width: 100%;
+	height: 30px;
+	border-radius: 3px;
+	padding: 10px;
+	margin: 5px 0 15px 0;
 }
 
 .col-sm-input textarea {
@@ -713,7 +714,7 @@ a:hover {
   height: 150px;
   border-radius: 3px;
   padding: 10px;
-  margin: 5px 0 10px 0;
+  margin: 0 15px 0 15px;
 }
 
 
