@@ -559,3 +559,10 @@ a:hover {
 		font-size: 75%;
 	}
 }
+
+@media screen and (max-width: 1281px) {
+	.fcontainer {
+	left: 10%;
+}
+
+}
