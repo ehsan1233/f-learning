@@ -19,9 +19,9 @@ var fPage = (function() {
 				// updateNavigation
 				updateNavigation( isLimit );
 				// initialize jScrollPane on the content div for the new item
-				setJSP( 'init' );
+/*				setJSP( 'init' );
 				// destroy jScrollPane on the content div for the old item
-				setJSP( 'destroy', old );
+				setJSP( 'destroy', old );*/
 
 			}
 		} ),
@@ -42,7 +42,7 @@ var fPage = (function() {
 	function init() {
 
 		// initialize jScrollPane on the content div of the first item
-		setJSP( 'init' );
+/*		setJSP( 'init' );*/
 		initEvents();
 
 	}
@@ -97,15 +97,15 @@ var fPage = (function() {
 		} );
 
 
-		// reinit jScrollPane on window resize
+/*		// reinit jScrollPane on window resize
 		$( window ).on( 'debouncedresize', function() {
 			// reinitialise jScrollPane on the content div
 			setJSP( 'reinit' );
-		} );
+		} );*/
 
 	}
 
-	function setJSP( action, idx ) {
+/*	function setJSP( action, idx ) {
 		
 		var idx = idx === undefined ? current : idx,
 			$fcontent = $fitems.eq( idx ).children( 'div.fcontent' ),
@@ -121,7 +121,7 @@ var fPage = (function() {
 			apiJSP.destroy();
 		}
 
-	}
+	}*/
 
 	function updateTOC() {
 		$fmenuItems.removeClass( 'fmenu-toc-current' ).eq( current ).addClass( 'fmenu-toc-current' );
