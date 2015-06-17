@@ -108,8 +108,12 @@ a {
 .fbb-favorite {
   float: right;
   margin: 5px 5px 0 0; }
-  .fbb-favorite:hover, .fbb-favorite:active {
+  .fbb-favorite:hover {
     cursor: pointer; }
+
+.favorite-star:hover {
+  content: url("../img/star-hover.png");
+  opacity: 1; }
 
 .menu-panel div a span, .fmenu-panel div a span {
   font-size: 22px;

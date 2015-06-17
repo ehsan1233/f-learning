@@ -129,8 +129,15 @@ a {
 .fbb-favorite {
   float: right;
   margin: 5px 5px 0 0;
-  &:hover, &:active {
+  &:hover {
     cursor: pointer;
+  }
+}
+
+.favorite-star {
+  &:hover {
+    content: url("../img/star-hover.png");
+    opacity: 1;
   }
 }
 
