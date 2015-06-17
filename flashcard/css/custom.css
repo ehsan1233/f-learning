@@ -97,13 +97,15 @@ a {
 
 .js .menu-panel {
   position: absolute;
-  left: -240px; }
+  left: -240px;
+  overflow: auto; }
 .js .fmenu-panel {
   position: absolute;
   left: 0;
   height: 500px;
   margin-bottom: 50px;
-  margin-top: 50px; }
+  margin-top: 50px;
+  overflow: auto; }
 
 .fbb-favorite {
   float: right;

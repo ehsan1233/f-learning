@@ -60,7 +60,7 @@
 .modal-dialog {
     background: #fefefe;
     border: #333333 solid 1px;
-    border-radius: 5px;
+    //border-radius: 5px;
     margin-left: -200px;
     position: fixed;
     left: 45%;
@@ -103,7 +103,7 @@
     .form-group {
         margin-right: -15px;
         margin-left: -15px;
-        width: 95%;
+        width: 100%;
     }
     .has-feedback {
         .form-control-feedback {
@@ -181,4 +181,20 @@ hr.style-eight:after {
     border-radius: 3px;
     text-shadow: 0 1px 0 rgba(0, 0 ,0, .3);
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 0 #fff;
+}
+
+@media screen and (max-height: 800px) {
+
+    .modal-dialog {
+        max-height: 400px;
+        overflow: auto;
+    }
+}
+
+@media screen and (max-width: 1281px) {
+
+    .modal-dialog {
+        max-width: 600px;
+        overflow: auto;
+    }
 }

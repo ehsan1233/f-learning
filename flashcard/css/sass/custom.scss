@@ -116,6 +116,7 @@ a {
   .menu-panel {
     position: absolute;
     left: -240px;
+    overflow: auto;
   }
   .fmenu-panel {
     position: absolute;
@@ -123,6 +124,7 @@ a {
     height: 500px;
     margin-bottom: 50px;
     margin-top: 50px;
+    overflow: auto;
   }
 }
 
