@@ -202,7 +202,7 @@ a {
   position: absolute;
   z-index: 1000; }
 
-.bb-custom-wrapper nav span, .menu-button, .fbb-custom-wrapper nav span, .fmenu-button {
+.bb-custom-wrapper nav span, .menu-button, .fbb-custom-wrapper nav span, .ftblcontents {
   position: absolute;
   width: 32px;
   height: 32px;
@@ -217,7 +217,7 @@ a {
   font-weight: bold;
   cursor: pointer; }
 
-.bb-custom-wrapper nav span:hover, .menu-button:hover, .fbb-custom-wrapper nav span:hover, .fmenu-button:hover {
+.bb-custom-wrapper nav span:hover, .menu-button:hover, .fbb-custom-wrapper nav span:hover, .ftblcontents:hover {
   background: #000; }
 
 .bb-custom-wrapper nav span:last-child, .fbb-custom-wrapper nav span:last-child {
@@ -257,13 +257,13 @@ a {
 
 
  */
-.menu-button, .fmenu-button {
+.menu-button, .ftblcontents {
   z-index: 1000;
   left: 20px;
   top: 20px;
   text-indent: -9000px; }
 
-.menu-button:after, .fmenu-button:after {
+.menu-button:after, .ftblcontents:after {
   position: absolute;
   content: '';
   width: 50%;
